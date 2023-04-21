@@ -1,6 +1,6 @@
 module InternalForces
 
-using DiffEqOperators: CenteredDifference
+using DiffEqOperators
 
 export moment, shear, torsion, bimoment, calculateDerivativeOperators
 
@@ -123,7 +123,7 @@ function calculateDerivativeOperators(z)
 
     NthDerivative = 1
     DerivativeOrder = 2
-    Az = CenteredDifference(NthDerivative, DerivativeOrder, dL, NumberOfNodes)
+    Az = DiffEqOperators.CenteredDifference(NthDerivative, DerivativeOrder, dL, NumberOfNodes)
     Az=Array(Az)
     Az=Az[:,2:end-1]  #remove ghost nodes
     Az[1,:]=zeros(NumberOfNodes)
@@ -161,7 +161,7 @@ function calculateDerivativeOperators(z)
 
     NthDerivative = 2
     DerivativeOrder = 2
-    Azz = CenteredDifference(NthDerivative, DerivativeOrder, dL, NumberOfNodes)
+    Azz = DiffEqOperators.CenteredDifference(NthDerivative, DerivativeOrder, dL, NumberOfNodes)
     Azz=Array(Azz)
     Azz=Azz[:,2:end-1]
     Azz[1,:]=zeros(NumberOfNodes)
@@ -198,7 +198,7 @@ function calculateDerivativeOperators(z)
 
     NthDerivative = 3
     DerivativeOrder = 2
-    Azzz = CenteredDifference(NthDerivative, DerivativeOrder, dL, NumberOfNodes)
+    Azzz = DiffEqOperators.CenteredDifference(NthDerivative, DerivativeOrder, dL, NumberOfNodes)
     Azzz=Array(Azzz)
     Azzz=Azzz[:,2:end-1]
     Azzz[1,:]=zeros(NumberOfNodes)
