@@ -1,0 +1,20 @@
+# This file is machine-generated - editing it directly is not advised
+
+julia_version = "1.8.5"
+manifest_format = "2.0"
+project_hash = "77c9d4a6f55f0604ecb0e352dae47df20752d206"
+
+[[deps.FornbergFiniteDiff]]
+git-tree-sha1 = "4b13b442b119ac4242c1724e917c9a4801ccc49d"
+repo-rev = "main"
+repo-url = "https://github.com/runtosolve/FornbergFiniteDiff.jl.git"
+uuid = "bc6155a8-87c8-416d-b52d-44cfacf6a7f1"
+version = "0.1.0"
+
+[[deps.InternalForces]]
+deps = ["FornbergFiniteDiff"]
+git-tree-sha1 = "94b0fc6d59644140e14170e2c3d193d695c9b97d"
+repo-rev = "main"
+repo-url = "https://github.com/runtosolve/InternalForces.jl.git"
+uuid = "0ac833a1-d586-4577-9e6b-83a7c69b6692"
+version = "0.1.0"
