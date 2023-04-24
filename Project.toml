@@ -4,4 +4,4 @@ authors = ["Cris Moen <cris.moen@runtosolve.com>"]
 version = "0.1.0"
 
 [deps]
-DiffEqOperators = "9fdde737-9c7f-55bf-ade8-46b3f136cc48"
+FornbergFiniteDiff = "bc6155a8-87c8-416d-b52d-44cfacf6a7f1"
