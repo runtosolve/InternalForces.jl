@@ -2,7 +2,7 @@ module InternalForces
 
 using FornbergFiniteDiff
 
-export moment, shear, torsion, bimoment, calculateDerivativeOperators
+export moment, shear, torsion, bimoment
 
 
 
@@ -30,22 +30,22 @@ function calculateDerivativeOperators(z)
 
     x=z[1:5]
     x0=x[1]
-    coeffs=calculate_weights(order, x0, x)
+    coeffs=FornbergFiniteDiff.calculate_weights(order, x0, x)
     Az[1,1:5]=coeffs
 
     x=z[1:5]
     x0=x[2]
-    coeffs=calculate_weights(order, x0, x)
+    coeffs=FornbergFiniteDiff.calculate_weights(order, x0, x)
     Az[2,1:5]=coeffs
 
     x=z[end-4:end]
     x0=x[end-1]
-    coeffs=calculate_weights(order, x0, x)
+    coeffs=FornbergFiniteDiff.calculate_weights(order, x0, x)
     Az[end-1,end-4:end]=coeffs
 
     x=z[end-4:end]
     x0=x[end]
-    coeffs=calculate_weights(order, x0, x)
+    coeffs=FornbergFiniteDiff.calculate_weights(order, x0, x)
     Az[end,end-4:end]=coeffs
 
    
@@ -68,22 +68,22 @@ function calculateDerivativeOperators(z)
 
     x=z[1:5]
     x0=x[1]
-    coeffs=calculate_weights(order, x0, x)
+    coeffs=FornbergFiniteDiff.calculate_weights(order, x0, x)
     Azz[1,1:5]=coeffs
 
     x=z[1:5]
     x0=x[2]
-    coeffs=calculate_weights(order, x0, x)
+    coeffs=FornbergFiniteDiff.calculate_weights(order, x0, x)
     Azz[2,1:5]=coeffs
 
     x=z[end-4:end]
     x0=x[end-1]
-    coeffs=calculate_weights(order, x0, x)
+    coeffs=FornbergFiniteDiff.calculate_weights(order, x0, x)
     Azz[end-1,end-4:end]=coeffs
 
     x=z[end-4:end]
     x0=x[end]
-    coeffs=calculate_weights(order, x0, x)
+    coeffs=FornbergFiniteDiff.calculate_weights(order, x0, x)
     Azz[end,end-4:end]=coeffs
 
     #third derivative
@@ -105,22 +105,22 @@ function calculateDerivativeOperators(z)
 
     x=z[1:5]
     x0=x[1]
-    coeffs=calculate_weights(order, x0, x)
+    coeffs=FornbergFiniteDiff.calculate_weights(order, x0, x)
     Azzz[1,1:5]=coeffs
 
     x=z[1:5]
     x0=x[2]
-    coeffs=calculate_weights(order, x0, x)
+    coeffs=FornbergFiniteDiff.calculate_weights(order, x0, x)
     Azzz[2,1:5]=coeffs
 
     x=z[end-4:end]
     x0=x[end-1]
-    coeffs=calculate_weights(order, x0, x)
+    coeffs=FornbergFiniteDiff.calculate_weights(order, x0, x)
     Azzz[end-1,end-4:end]=coeffs
 
     x=z[end-4:end]
     x0=x[end]
-    coeffs=calculate_weights(order, x0, x)
+    coeffs=FornbergFiniteDiff.calculate_weights(order, x0, x)
     Azzz[end,end-4:end]=coeffs
 
     # #place singled sided stencils at discontinuities
